@@ -14,10 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/help',function(){
-    return "HELP PAGE";
-});
-Route::get('age/{age?}',function($age=null){
-    return 'I`am '.',my age is '.$age;
-});
-Route::get('user/{name}','UserController@name')->middleware('name');
+Route::resource('articles','ArticlesController');
+
